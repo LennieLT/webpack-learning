@@ -1,0 +1,33 @@
+{
+  "name": "webpack-learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LennieLT/webpack-learning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LennieLT/webpack-learning/issues"
+  },
+  "homepage": "https://github.com/LennieLT/webpack-learning#readme",
+  "devDependencies": {
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "express": "^4.17.1",
+    "file-loader": "^4.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "less-loader": "^5.0.0",
+    "style-loader": "^1.0.0",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.39.1",
+    "webpack-dev-middleware": "^3.7.0"
+  }
+}
