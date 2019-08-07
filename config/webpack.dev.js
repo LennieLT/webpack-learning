@@ -1,4 +1,6 @@
 const path = require('path');
+const HtmlwebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
@@ -11,7 +13,10 @@ module.exports = {
         rules: [
             {
                 test: /.js$/,
-                use: 'babel-loader'
+                use: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env']
+                }
             },
             {
                 test: /.css$/,
@@ -45,5 +50,9 @@ module.exports = {
             }
         ]
     },
-    plugins: []
+    plugins: [
+        new HtmlwebpackPlugin({
+            template: ''
+        }),
+    ]
 }
