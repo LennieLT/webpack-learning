@@ -4,6 +4,8 @@ import './index.less';
 
 class HelloWord extends React.Component {
     render() {
-        
+        return <div>
+            hello word
+        </div>
     }
 }
