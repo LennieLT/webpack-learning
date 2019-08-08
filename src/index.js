@@ -9,3 +9,8 @@ class HelloWord extends React.Component {
         </div>
     }
 }
+
+ReactDOM.render(
+    <HelloWord />,
+    document.getElementById('root')
+);

@@ -1,12 +1,15 @@
 const path = require('path');
 const HtmlwebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.js',
+    entry: {
+        index: path.resolve(__dirname, '../src/index.js')
+    },
     output: {
-        path: path.resolve(__dirname, './dist'),
+        path: path.resolve(__dirname, '../dist'),
         filename: '[name].js'
     },
     module: {
@@ -14,9 +17,6 @@ module.exports = {
             {
                 test: /.js$/,
                 use: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-env']
-                }
             },
             {
                 test: /.css$/,
@@ -51,8 +51,10 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new HtmlwebpackPlugin({
-            template: ''
+            title: 'helloword',
+            template: path.resolve(__dirname, '../src/index.html')
         }),
     ]
 }
