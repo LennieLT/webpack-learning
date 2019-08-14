@@ -6,7 +6,10 @@ const webpack = require('webpack');
 module.exports = {
     mode: 'development',
     entry: {
-        index: path.resolve(__dirname, '../src/index.js')
+        index: [
+            'webpack-hot-middleware/client',
+            path.resolve(__dirname, '../src/index.js')
+        ]
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
@@ -51,6 +54,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),        
         new CleanWebpackPlugin(),
         new HtmlwebpackPlugin({
             title: 'helloword',
